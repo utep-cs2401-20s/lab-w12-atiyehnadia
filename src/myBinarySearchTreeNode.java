@@ -62,7 +62,6 @@ class myBinarySearchTreeNode{
         rightH = this.right.height();
       }
       int height = 1 + findMax(leftH, rightH);
-      System.out.println(height);
       return height;
     }
   }
@@ -88,7 +87,7 @@ class myBinarySearchTreeNode{
     if(search > this.myValue){
       return this.right.depth(search) + 1;
     }
-    if(search == myValue){
+    if(search == this.myValue){
       return 1;
     }
     return -1;
@@ -97,13 +96,12 @@ class myBinarySearchTreeNode{
   public int size(){
     // recursively calulates the amount of nodes in the tree
     int size = 1;
-    if(left != null){
+    if(this.left != null){
       size += left.size();
     }
-    if(right != null){
-      size += right.size();
+    if(this.right != null){
+      size += this.right.size();
     }
-    System.out.println(size);
     return size;
   }
   
